@@ -10,7 +10,7 @@ app.get '/production/manifest.json', (req, res) ->
   catch err
     {}
 
-  res.send _.mapObject s3URL, manifest
+  res.send _.mapObj s3URL, manifest
 
 app.get '/production/stylesheets/index.css', (req, res) ->
   res.redirect '/' + res.locals.assets('stylesheets/index.css')
