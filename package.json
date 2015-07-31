@@ -1,0 +1,36 @@
+{
+  "name": "artsy-elan",
+  "description": "Élan",
+  "repository": "https://github.com/artsy/elan",
+  "engines": {
+    "node": "0.12.x"
+  },
+  "scripts": {
+    "postinstall": "gulp publish"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "browser-sync": "^2.8.0",
+    "browserify": "^11.0.0",
+    "coffee-script": "^1.9.2",
+    "coffeeify": "^1.1.0",
+    "cookie-parser": "*",
+    "cookie-session": "*",
+    "del": "^1.2.0",
+    "express": "^4.12.3",
+    "glob": "^5.0.14",
+    "gulp": "^3.9.0",
+    "gulp-awspublish": "^2.0.2",
+    "gulp-rev-all": "^0.8.21",
+    "gulp-stylus": "^2.0.5",
+    "gulp-util": "^3.0.6",
+    "jade": "*",
+    "morgan": "*",
+    "nib": "^1.1.0",
+    "ramda": "^0.17.0",
+    "run-sequence": "^1.1.2",
+    "should": "*",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.3.0"
+  }
+}
