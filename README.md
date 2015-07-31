@@ -24,12 +24,13 @@ Asset changes are streamed to the browser (stylesheets) or auto-reloaded (javasc
 (Maybe not super useful; CSS much more so than JS though, for now at least)
 
 ```
-GET /public/manifest.json
+GET /production/manifest.json
 
 => {
-  javascripts/index.js: "javascripts/index.xxx.js",
-  stylesheets/index.css: "stylesheets/index.xxx.css"
+  javascripts/index.js: "//s3.amazonaws.com/bucket-name/javascripts/index.xxx.js.gz",
+  stylesheets/index.css: "//s3.amazonaws.com/bucket-name/stylesheets/index.xxx.css.gz"
 }
+
 ```
 
 ----
