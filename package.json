@@ -1,6 +1,7 @@
 {
   "name": "artsy-elan",
   "description": "Élan",
+  "version": "0.0.1",
   "repository": "https://github.com/artsy/elan",
   "engines": {
     "node": "0.12.x"
