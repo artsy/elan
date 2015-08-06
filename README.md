@@ -4,7 +4,27 @@ UI library and style guide
 
 [artsy-elan-production.herokuapp.com](https://artsy-elan-production.herokuapp.com)
 
-------
+----
+
+## Installation
+
+```
+npm install artsy-elan --save
+```
+
+Include:
+
+```
+
+// Common
+@import '../../node_modules/artsy-elan/components/lib'
+
+// Components
+@import '../../node_modules/artsy-elan/assets/stylesheets/components'
+
+```
+
+----
 
 ## Development server
 
@@ -21,14 +41,13 @@ Asset changes are streamed to the browser (stylesheets) or auto-reloaded (javasc
 
 # Hosted production assets
 
-(Maybe not super useful; CSS much more so than JS though, for now at least)
-
 ```
 GET /production/manifest.json
 
 => {
-  javascripts/index.js: "//s3.amazonaws.com/bucket-name/javascripts/index.xxx.js.gz",
-  stylesheets/index.css: "//s3.amazonaws.com/bucket-name/stylesheets/index.xxx.css.gz"
+  images/favicon.ico: "//s3.amazonaws.com/artsy-elan-production/images/favicon.xxx.ico.gz",
+  stylesheets/components.css: "//s3.amazonaws.com/artsy-elan-production/stylesheets/components.xxx.css.gz"
+  [...]
 }
 
 ```
@@ -37,6 +56,6 @@ GET /production/manifest.json
 
 ### TODO
 
-* NPM publish
+* <del>NPM publish</del>
 * Lotta re-organization
 * Icons / SVG embedding
