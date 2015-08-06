@@ -3,6 +3,7 @@
   "description": "Élan",
   "version": "0.0.1",
   "repository": "https://github.com/artsy/elan",
+  "license": "MIT",
   "engines": {
     "node": "0.12.x"
   },
