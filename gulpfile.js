@@ -56,6 +56,11 @@ gulp.task('stylesheets', function() {
     .pipe(browserSync.reload({ stream: true }));
 });
 
+gulp.task('images', function() {
+  return gulp.src('./assets/images/*')
+    .pipe(gulp.dest('./public/images'));
+});
+
 gulp.task('watch', function() {
   browserSync.init({
     open: false,
@@ -115,7 +120,8 @@ gulp.task('build:development', function(done) {
     'watch',
     [
       'javascripts',
-      'stylesheets'
+      'stylesheets',
+      'images'
     ],
     done
   );
@@ -126,7 +132,8 @@ gulp.task('build:production', function(done) {
     'teardown',
     [
       'javascripts',
-      'stylesheets'
+      'stylesheets',
+      'images'
     ],
     [
       'compress:javascripts',
