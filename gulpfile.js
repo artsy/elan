@@ -13,6 +13,8 @@ var browserSync = require('browser-sync').create();
 var RevAll = require('gulp-rev-all');
 var awspublish = require('gulp-awspublish');
 var del = require('del');
+var uglify = require('gulp-uglify');
+var minifyCSS = require('gulp-minify-css');
 
 var options, bundle, bundler;
 
@@ -54,6 +56,11 @@ gulp.task('stylesheets', function() {
     .pipe(browserSync.reload({ stream: true }));
 });
 
+gulp.task('images', function() {
+  return gulp.src('./assets/images/*')
+    .pipe(gulp.dest('./public/images'));
+});
+
 gulp.task('watch', function() {
   browserSync.init({
     open: false,
@@ -76,30 +83,6 @@ gulp.task('watch', function() {
     .on('change', browserSync.reload);
 });
 
-gulp.task('build:development', function(done) {
-  runSequence(
-    'teardown',
-    'watch',
-    [
-      'javascripts',
-      'stylesheets'
-    ],
-    done
-  );
-});
-
-gulp.task('build:production', function(done) {
-  runSequence(
-    'teardown',
-    [
-      'javascripts',
-      'stylesheets'
-    ],
-    'rev:clean',
-    done
-  );
-});
-
 gulp.task('teardown', _.partial(del, 'public/*'));
 
 gulp.task('rev', function() {
@@ -117,6 +100,48 @@ gulp.task('rev:clean', ['rev'], function(done) {
     return 'public/' + path;
   });
   del(toClean, done);
+});
+
+gulp.task('compress:javascripts', function() {
+  return gulp.src('public/javascripts/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('public/javascripts'))
+});
+
+gulp.task('compress:stylesheets', function() {
+  return gulp.src('public/stylesheets/*.css')
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('public/stylesheets'))
+});
+
+gulp.task('build:development', function(done) {
+  runSequence(
+    'teardown',
+    'watch',
+    [
+      'javascripts',
+      'stylesheets',
+      'images'
+    ],
+    done
+  );
+});
+
+gulp.task('build:production', function(done) {
+  runSequence(
+    'teardown',
+    [
+      'javascripts',
+      'stylesheets',
+      'images'
+    ],
+    [
+      'compress:javascripts',
+      'compress:stylesheets'
+    ],
+    'rev:clean',
+    done
+  );
 });
 
 gulp.task('publish', ['build:production'], function() {
