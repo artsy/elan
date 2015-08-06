@@ -13,6 +13,8 @@ var browserSync = require('browser-sync').create();
 var RevAll = require('gulp-rev-all');
 var awspublish = require('gulp-awspublish');
 var del = require('del');
+var uglify = require('gulp-uglify');
+var minifyCSS = require('gulp-minify-css');
 
 var options, bundle, bundler;
 
@@ -76,6 +78,37 @@ gulp.task('watch', function() {
     .on('change', browserSync.reload);
 });
 
+gulp.task('teardown', _.partial(del, 'public/*'));
+
+gulp.task('rev', function() {
+  var revAll = new RevAll();
+  return gulp.src('public/**')
+    .pipe(revAll.revision())
+    .pipe(gulp.dest('public'))
+    .pipe(revAll.manifestFile())
+    .pipe(gulp.dest('public'));
+});
+
+gulp.task('rev:clean', ['rev'], function(done) {
+  var manifest = JSON.parse(fs.readFileSync('public/rev-manifest.json', 'utf8'));
+  var toClean = Object.keys(manifest).map(function(path) {
+    return 'public/' + path;
+  });
+  del(toClean, done);
+});
+
+gulp.task('compress:javascripts', function() {
+  return gulp.src('public/javascripts/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('public/javascripts'))
+});
+
+gulp.task('compress:stylesheets', function() {
+  return gulp.src('public/stylesheets/*.css')
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('public/stylesheets'))
+});
+
 gulp.task('build:development', function(done) {
   runSequence(
     'teardown',
@@ -95,28 +128,13 @@ gulp.task('build:production', function(done) {
       'javascripts',
       'stylesheets'
     ],
+    [
+      'compress:javascripts',
+      'compress:stylesheets'
+    ],
     'rev:clean',
     done
   );
-});
-
-gulp.task('teardown', _.partial(del, 'public/*'));
-
-gulp.task('rev', function() {
-  var revAll = new RevAll();
-  return gulp.src('public/**')
-    .pipe(revAll.revision())
-    .pipe(gulp.dest('public'))
-    .pipe(revAll.manifestFile())
-    .pipe(gulp.dest('public'));
-});
-
-gulp.task('rev:clean', ['rev'], function(done) {
-  var manifest = JSON.parse(fs.readFileSync('public/rev-manifest.json', 'utf8'));
-  var toClean = Object.keys(manifest).map(function(path) {
-    return 'public/' + path;
-  });
-  del(toClean, done);
 });
 
 gulp.task('publish', ['build:production'], function() {
