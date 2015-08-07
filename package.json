@@ -8,7 +8,7 @@
     "node": "0.12.x"
   },
   "scripts": {
-    "postinstall": "if [ -n \"$npm_config_production\" ]; then gulp publish; fi"
+    "postinstall": "if [ -n \"$npm_config_elan_production\" ]; then gulp publish; fi"
   },
   "dependencies": {
     "body-parser": "*",
