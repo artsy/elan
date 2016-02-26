@@ -1,15 +1,3 @@
-puts "OK"
-puts "Lines"
-puts lines_of_code
-puts "Added"
-puts files_added
-puts "modified"
-puts files_modified
-
-puts ""
-puts pr_body
-puts ""
-puts pr_title
-
-warn("Some random warning")
-fail("Orta is not really orta")
+message("@orta something changed in elan!") if files_modified.include? "/components/lib/variables/colors.json"
+message("@orta something changed in elan!") if files_modified.include? "/components/lib/variables/typography.json"
+message("@orta something changed in elan!") if files_modified.include? "/components/lib/variables/widths.json"
