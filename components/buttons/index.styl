@@ -9,7 +9,7 @@
   background-color transparent
   text-align center
   vertical-align middle
-  border 2px solid gray-lighter-color
+  border 2px solid gray-regular
   border-radius (@width / 2)
   opacity 1
   user-select none
@@ -17,12 +17,12 @@
   line-height @height !important
   transition all 0.125s
   &:hover
-    background-color gray-darker-color
+    background-color gray-semibold
     border-color @background-color
     color white
   &.is-active
   &[data-state='active']
-    background-color purple-color
+    background-color purple-regular
     border-color @background-color
     color white
 
@@ -41,7 +41,7 @@
   text-decoration none
   transition color 0.25s
   &:hover
-    color purple-color
+    color purple-regular
 
 .play-button
   position absolute
@@ -56,7 +56,7 @@
   padding 25px
   transition background-color 0.25s
   &:hover
-    background-color purple-color
+    background-color purple-regular
   &:after
     display block
     position absolute
@@ -84,29 +84,29 @@
   line-height 1
   cursor pointer
   border none
-  background-color gray-lightest-color
+  background-color gray-light
   avant-garde()
   transition background-color 0.25s, color 0.25s
   border 1px solid transparent
   text-decoration none
   &:focus, &:hover
     outline none
-    background-color gray-lighter-color
+    background-color gray-regular
   // States
   &[data-state='success'], &.is-success
-    background-color green-color
+    background-color green-regular
     color #fff
     &:hover
-      background-color darken(green-color, 25%)
+      background-color darken(green-regular, 25%)
   &[data-state='error'], &.is-error
     &, &:focus
-      background-color red-color
+      background-color red-regular
       color #fff
       &:hover
-        background-color darken(red-color, 25%)
+        background-color darken(red-regular, 25%)
   &[data-state='loading'], &.is-loading
     &, &[disabled], &[disabled]:hover
-      background-color purple-color
+      background-color purple-regular
       color transparent !important
       // Note:
       // Giving the loading state to input[type='submit']
@@ -124,15 +124,13 @@
 
   &[disabled], &.is-disabled, &.is-disabled
     &, &:hover
-      background-color gray-lightest-color
+      background-color gray-light
       cursor default
       color rgba(black, 0.5)
       &[data-state='success'], &.is-success
-        background-color green-color
-        color green-light-color
+        background-color green-regular
       &[data-state='error'], &.is-error
-        background-color red-color
-        color red-light-color
+        background-color red-regular
 
   // Structural variants
   &.is-block
@@ -159,47 +157,47 @@
   color #fff
   border 1px solid transparent
   &:focus, &:hover
-    background-color purple-color
+    background-color purple-regular
   &[disabled], &.is-disabled
     &, &:hover
-      background-color gray-darker-color
+      background-color gray-semibold
       color rgba(white, 0.75)
 
 .avant-garde-button-dark
   @extends .avant-garde-button
   color white
-  background-color gray-darkest-color
+  background-color gray-bold
   &:focus, &:hover
-    background-color purple-color
+    background-color purple-regular
   &[disabled], &.is-disabled
     &, &:hover
-      background-color gray-darkest-color
+      background-color gray-bold
       color rgba(white, 0.25)
 
 .avant-garde-button-white
   @extends .avant-garde-button
   background-color transparent
-  border 1px solid gray-lighter-color
+  border 1px solid gray-regular
   &:focus, &:hover, &:active
-    color purple-color
+    color purple-regular
     background-color transparent
   &[data-state='success'], &.is-success
     background-color transparent
-    color green-color
+    color green-regular
     &:hover
       background-color transparent
-      color purple-color
+      color purple-regular
   &[data-state='error'], &.is-error
     &, &:focus
       background-color transparent
-      color red-color
+      color red-regular
       &:hover
         background-color transparent
-        color purple-color
+        color purple-regular
   &[data-state='loading'], &.is-loading
     background-color white
     &::before
-      background-color purple-color
+      background-color purple-regular
   &[disabled], &.is-disabled
     &, &:hover
       background-color transparent

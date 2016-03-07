@@ -11,12 +11,12 @@
   &:focus
     border-bottom-color black
   &.is-active
-    color purple-color
-    border-bottom-color purple-light-color
+    color purple-regular
+    border-bottom-color purple-light
   &[disabled]
   &.is-disabled
   &.is-disabled:hover
-    color gray-dark-color
+    color gray-semibold
     pointer-events none
     border-bottom-color transparent
 .garamond-tab-separator
@@ -26,7 +26,7 @@
   height 0.9em
   vertical-align baseline
   transform rotate(30deg)
-  background-color gray-darker-color
+  background-color gray-semibold
   &.is-vertical
     transform none
 .garamond-tab-label
@@ -39,7 +39,7 @@
   margin 0 0.5em
   vertical-align middle
   transform none
-  background-color gray-color
+  background-color gray-medium
 
 .contextual-return-link
   display block
@@ -61,7 +61,7 @@
     line-height 0
     margin-left 5px
     vertical-align -3px
-    color gray-color
+    color gray-medium
     transition color 0.25s
   &:hover > .icon-chevron-small-right
     color black
@@ -104,7 +104,7 @@
   width 100%
   border-width 1px 0
   border-style solid
-  border-color gray-lighter-color
+  border-color gray-regular
 .hln-cell
   &.is-dominant
     flex 1
@@ -123,7 +123,7 @@
     padding-right 0
   &:hover
   &.is-active
-    color purple-color
+    color purple-regular
 
 .alphabetical-index
   @extends .horizontal-list-nav
@@ -156,7 +156,7 @@ dots(times)
     float left
     width 0
     white-space nowrap
-    color gray-darker-color
+    color gray-semibold
     content dots(500)
   > span
     &:first-child
@@ -169,7 +169,7 @@ dots(times)
       position relative
       z-index 1
 a.leader-dots-list-item:hover
-  color purple-color
+  color purple-regular
 
 entity-height = 17px
 .entity-link
@@ -194,24 +194,24 @@ a.entity-link:hover
   &:hover
   &.is-following
   &[data-state='following']
-    color purple-color
+    color purple-regular
   &.is-following
   &[data-state='following']
     &:after
       content 'Following'
     &:hover
-      color red-color
+      color red-regular
       &:after
         content 'Unfollow'
     &.is-clicked
-      color purple-color
+      color purple-regular
       &:after
         content 'Following'
 
 .responsive-image-container
   display block
   position relative
-  background-color gray-color
+  background-color gray-medium
   img
     position absolute
     top 0

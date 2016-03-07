@@ -6,7 +6,7 @@
     padding-bottom 10px
     garamond()
     font-size 20px
-    border-bottom 1px solid gray-lighter-color
+    border-bottom 1px solid gray-regular
   > a
   > button
     text-align center
@@ -44,7 +44,7 @@
 bordered-input-placeholder()
   garamond()
   font-size default-garamond-font-size
-  color gray-dark-color
+  color gray-semibold
 
 .avant-garde-form-label
   display block
@@ -55,12 +55,12 @@ bordered-input-placeholder()
     garamond-size('l-caption', true)
     text-transform none
     letter-spacing 0
-    color gray-darker-color
+    color gray-semibold
 
 .bordered-input
   margin 0
   padding 10px
-  border 2px solid gray-lighter-color
+  border 2px solid gray-regular
   border-radius 0
   box-shadow none
   garamond()
@@ -70,16 +70,16 @@ bordered-input-placeholder()
   placeholder(bordered-input-placeholder)
   &:focus
   &:active
-    border-color purple-color
+    border-color purple-regular
     outline none
     transition border-color 0.5s
 
   &:disabled
-    border dotted 2px gray-lighter-color
+    border dotted 2px gray-regular
 
   &[data-state='error']
   &.is-error
-    border-color red-color
+    border-color red-regular
 
   &.is-block
     display block
@@ -98,7 +98,7 @@ bordered-input-placeholder()
     top 50%
     left 15px
     transform translateY(-50%)
-    color gray-dark-color
+    color gray-semibold
     pointer-events none
   > .bordered-input
     padding-left 30px
@@ -131,10 +131,10 @@ bordered-select-border-width = 2px
     background-color white
     border-top 10px solid white // faux margins
     border-bottom @border-top
-    border-left 1px solid gray-lighter-color
+    border-left 1px solid gray-regular
     pointer-events none
   &:after
-    caret(gray-color)
+    caret(gray-medium)
     position absolute
     top 50%
     right (bordered-select-caret-width + (bordered-select-border-width / 2))
@@ -149,7 +149,7 @@ bordered-select-border-width = 2px
     padding 8px 10px 7px
     garamond()
     font-size default-garamond-font-size
-    border 2px solid gray-lighter-color
+    border 2px solid gray-regular
     border-radius 0
     box-shadow none
     background-color white
@@ -160,7 +160,7 @@ bordered-select-border-width = 2px
   outline none
   garamond()
   font-size default-garamond-font-size
-  border 2px solid gray-lighter-color
+  border 2px solid gray-regular
   border-radius 0
   box-shadow none
   background-color white
@@ -180,9 +180,9 @@ textarea.bordered-input
 .artsy-toggle
   avant-garde()
   background-color white
-  border 2px solid gray-lighter-color
+  border 2px solid gray-regular
   border-radius 15px
-  color gray-color
+  color gray-medium
   cursor pointer
   display inline-block
   line-height 17px
@@ -191,7 +191,7 @@ textarea.bordered-input
   width 56px
   &:focus, &:hover
     & + .artsy-toggle-label
-      color purple-color
+      color purple-regular
 
   &::after
     content attr(data-state)
@@ -216,8 +216,8 @@ textarea.bordered-input
       content "\25CF"
 
   &[data-state='on']
-    background-color purple-color
-    border-color purple-color
+    background-color purple-regular
+    border-color purple-regular
     .artsy-toggle-dot
       color white
       left 33px
@@ -236,7 +236,7 @@ textarea.bordered-input
     content '\2026'
 
 .artsy-toggle-label:hover
-  color purple-color
+  color purple-regular
   cursor pointer
 
 form.is-validated
@@ -256,7 +256,7 @@ checkbox-size = 20px
   width checkbox-size
   height checkbox-size
   position relative
-  background gray-lighter-color
+  background gray-regular
   user-select none
   > label
     cursor pointer
@@ -300,7 +300,7 @@ checkbox-size = 20px
     > .autocomplete-loading-indicator
       display block
       > .loading-spinner-small
-        background-color purple-color
+        background-color purple-regular
   > .autocomplete-loading-indicator
     display none
     position absolute
@@ -313,7 +313,7 @@ checkbox-size = 20px
       visibility visible
       transition opacity 0.25s, border-color 0.75s
       opacity 1
-      border-color purple-color
+      border-color purple-regular
   &.is-block
     display block
     &
@@ -330,12 +330,12 @@ checkbox-size = 20px
   .tt-dropdown-menu
     width 100%
     background-color white
-    border 2px solid purple-color
+    border 2px solid purple-regular
     border-top none
     text-align left
     z-index zindex-modal
   .tt-suggestion
-    border-bottom 1px solid gray-lighter-color
+    border-bottom 1px solid gray-regular
     &:last-child
       border-bottom none
     &:hover
@@ -355,9 +355,9 @@ checkbox-size = 20px
   line-height home-logo-size
   text-align left
   opacity 0
-  border 2px solid gray-lighter-color
+  border 2px solid gray-regular
   border-top none
-  background-color gray-lightest-color
+  background-color gray-light
   overflow ellipsis
   pointer-events none
   z-index zindex-modal
@@ -369,7 +369,7 @@ checkbox-size = 20px
 .results-list-item
   display table
   width 100%
-  border-bottom 1px solid gray-lighter-color
+  border-bottom 1px solid gray-regular
   &:first-child
     border-top @border-bottom
 .results-list-item-cell

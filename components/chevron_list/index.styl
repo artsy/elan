@@ -1,4 +1,4 @@
-overlapping-border(border-color = gray-lighter-color)
+overlapping-border(border-color = gray-regular)
   border-top 1px solid border-color
   border-bottom @border-top
   margin-top -1px
@@ -10,7 +10,7 @@ chevron()
   &::after
     iconfont-styling()
     content '\e607'
-    color gray-color
+    color gray-medium
     vertical-align middle
     position absolute
     top 50%
@@ -40,7 +40,7 @@ chevron-item()
   avant-garde-size('m-headline', true)
   padding 14px 0
   &.is-active
-    color purple-color
+    color purple-regular
 
 // Large
 .large-chevron-list a
@@ -52,6 +52,6 @@ chevron-item()
     font-size 40px
     right 10px
   &:hover
-    background-color gray-lightest-color
+    background-color gray-light
     border-color @background-color
     z-index 1

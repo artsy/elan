@@ -8,7 +8,7 @@ suggestion-height = (suggestion-thumbnail-size + 20px)
   height default-icon-font-size
   margin ((home-logo-size - default-icon-font-size) / 2) 0
   padding 0
-  border 1px solid gray-color
+  border 1px solid gray-medium
   form
     position relative
     width 100%
@@ -36,9 +36,9 @@ suggestion-height = (suggestion-thumbnail-size + 20px)
   visibility visible
   overflow hidden
   line-height logo-size
-  border 1px solid gray-color
+  border 1px solid gray-medium
   border-top none
-  background-color gray-lightest-color
+  background-color gray-light
   transition opacity 0.125s, height 0.125s
 
 #main-layout-search-bar-spinner
@@ -82,9 +82,9 @@ search-bar-input-placeholder()
     margin-top 1px
     margin-left -1px
     background-color white
-    border 1px solid gray-lighter-color
+    border 1px solid gray-regular
   .tt-suggestion
-    border-bottom 1px solid gray-lighter-color
+    border-bottom 1px solid gray-regular
     &:last-child
       border-bottom none
     &:hover
@@ -94,10 +94,10 @@ search-bar-input-placeholder()
       *
         color white
     &.empty-item
-      background-color lighten(yellow-light-color, 50%)
+      background-color lighten(yellow-regular, 50%)
       &:hover
       &.tt-cursor
-        background-color yellow-light-color
+        background-color yellow-regular
         *
           color black
       .mlsb-suggestion-value
@@ -129,7 +129,7 @@ search-bar-input-placeholder()
   display block
   width suggestion-thumbnail-size
   height suggestion-thumbnail-size
-  background-color gray-lightest-color
+  background-color gray-light
   // Display person icon
   &::before
     display block
@@ -151,7 +151,7 @@ search-bar-input-placeholder()
 .mlsb-suggestion-kind
   margin-left 10px
   font-style italic
-  color gray-darker-color
+  color gray-semibold
 
 .search-result-images
   height 90px
