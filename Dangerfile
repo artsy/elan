@@ -1,3 +1,3 @@
-message("@orta something changed in elan!") if files_modified.include? "/components/lib/variables/colors.json"
-message("@orta something changed in elan!") if files_modified.include? "/components/lib/variables/typography.json"
-message("@orta something changed in elan!") if files_modified.include? "/components/lib/variables/widths.json"
+if git.modified_files.include? "/components/lib/variables/*.json"
+  warn "There may need to be changes to the iOS frameworks."
+end
